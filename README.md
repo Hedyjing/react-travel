@@ -5,3 +5,8 @@
 - css modules
 - .vscode
 - 全局typescript的定义声明custom.d.ts
+## Header和Footer
+- 添加了header和footer, header中top-header有语言切换, 注册登录,
+- header中可以搜索
+- header第三部分为menu
+- 最后是footer
