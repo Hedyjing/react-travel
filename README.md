@@ -10,3 +10,6 @@
 - header中可以搜索
 - header第三部分为menu
 - 最后是footer
+
+## 组件化重构项目
+- 组件化Header和Footer
