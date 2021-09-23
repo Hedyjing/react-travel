@@ -13,3 +13,8 @@
 
 ## 组件化重构项目
 - 组件化Header和Footer
+
+## 主页内容
+> 使用ant design的grid栅格布局对content部分布局, 然后完成菜单和走马灯组件
+- 侧边菜单 SideMenu
+- 走马灯 Carousel
