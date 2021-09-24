@@ -1,12 +1,14 @@
 import React from 'react';
 import styles from './App.module.css';
-import { Header, Footer, SideMenu, Carousel, ProductCollection } from './components';
+import { Header, Footer, SideMenu, Carousel, ProductCollection, BusinessPartners } from './components';
 import { Row, Col, Typography } from 'antd';
 import { productList1, productList2, productList3 } from './mockups'
 
 import sideImage1 from './assets/images/sider_2019_12-09.png';
 import sideImage2 from './assets/images/sider_2019_02-04.png';
 import sideImage3 from './assets/images/sider_2019_02-04-2.png';
+
+import {companies} from './assets'
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
           sideImage={sideImage3}
           product={productList3}
         />
+        <BusinessPartners companies={companies} />
       </div>
       <Footer></Footer>
     </div>

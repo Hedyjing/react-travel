@@ -22,3 +22,5 @@
 - mockup假数据
 - productCollection组件(三个内容板块是三个ProductCollection组件)
 -productCollection内部的ProductImage小组件
+## 主页合作企业组件
+- BusinessPartners
