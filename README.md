@@ -18,3 +18,7 @@
 > 使用ant design的grid栅格布局对content部分布局, 然后完成菜单和走马灯组件
 - 侧边菜单 SideMenu
 - 走马灯 Carousel
+## 主页热门产品推荐
+- mockup假数据
+- productCollection组件(三个内容板块是三个ProductCollection组件)
+-productCollection内部的ProductImage小组件
