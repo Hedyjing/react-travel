@@ -55,3 +55,10 @@ react-router和react-router-dom
     - RESTful的思维方式, 参数作为url片段的一部分, 使用斜杠'/
     - 例如http://www.hahah.com/product/12354662
       - 最后的数字部分为参数, 具有语义性, 表示来到id为12354662的产品详情页面
+
+## 网站导航, 组件间的路由信息传递
+> 使用react-route中的hooks函数进行路由导航
+- useParams
+- useHistory
+- useLocation
+- useRouteMatch
