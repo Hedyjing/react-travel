@@ -57,8 +57,12 @@ react-router和react-router-dom
       - 最后的数字部分为参数, 具有语义性, 表示来到id为12354662的产品详情页面
 
 ## 网站导航, 组件间的路由信息传递
-> 使用react-route中的hooks函数进行路由导航
+> 使用react-router中的hooks函数进行路由导航
 - useParams
 - useHistory
 - useLocation
 - useRouteMatch
+
+## 使用另一种方式导航 - `<Link>`组件
+- 使用link组件, 组件会被a标签包括, 这样用户可以右键打开链接
+- link内部接受一个to属性props参数, 展开props, 得到children和to, 用a标签包括children, 使用useHistory导航

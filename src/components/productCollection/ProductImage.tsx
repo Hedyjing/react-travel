@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Typography } from 'antd'
-import { useParams, useHistory, useLocation, useRouteMatch} from 'react-router-dom'
+import { useParams, useHistory, useLocation, useRouteMatch, Link} from 'react-router-dom'
 
 interface ProductImageProps {
   id: string | number;
@@ -16,7 +16,7 @@ export const ProductImage: React.FC<ProductImageProps> = ({ id, size, title, ima
   const history = useHistory();
   // const match = useRouteMatch();
 
-  return <div onClick={() => history.push(`detail/${id}`)}>
+  return <Link to={`detail/${id}`}>
     {size === 'large' ?
       <Image src={imageSrc} height={285} width={490} /> :
       <Image src={imageSrc} height={120} width={240} />
@@ -25,5 +25,5 @@ export const ProductImage: React.FC<ProductImageProps> = ({ id, size, title, ima
       <Typography.Text type="secondary">{title.slice(0, 25)}</Typography.Text>
       <Typography.Text type='danger' strong>{price}</Typography.Text>
     </div>
-  </div>
+  </Link>
 }
