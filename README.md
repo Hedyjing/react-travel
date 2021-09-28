@@ -86,3 +86,6 @@ react-router和react-router-dom
 ---
 ## 利用store进行语言切换
 - 创建store, 创建reducer传入store进行初始化
+
+## 在组件中使用store访问数据渲染到页面上
+- 使用store.getState();
