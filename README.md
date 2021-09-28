@@ -92,3 +92,8 @@ react-router和react-router-dom
 
 ## 使用action来dispatch命令和变化
 - dispatch参数为`{type: 'todos/todoAdded', payload: todoText}`
+
+## 组件订阅store.subscribe
+- 在组件内订阅store的数据, 以便store数据更新后可以及时推送到组件
+- 当store变化时, 会调用subscribe参数中的回调函数来更新组件的state
+- subscribe的参数是一个回调函数, 用来更新组件的state
