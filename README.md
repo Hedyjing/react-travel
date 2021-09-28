@@ -66,3 +66,23 @@ react-router和react-router-dom
 ## 使用另一种方式导航 - `<Link>`组件
 - 使用link组件, 组件会被a标签包括, 这样用户可以右键打开链接
 - link内部接受一个to属性props参数, 展开props, 得到children和to, 用a标签包括children, 使用useHistory导航
+
+## Redux
+> redux是一种设计模式, 可以进行数据管理
+> redux统一保存数据, 在隔离了数据与UI的同事, 负责处理数据的绑定
+### 什么时候需要使用Redux
+- 组件需要共享数据(或者叫做状态state)的时候
+- 某个状态需要在任何地方都可以被随时访问的时候
+- 某个组件需要改变另一个组件的状态的时候
+- 语言切换, 黑暗模式切换, 用户登录全局数据共享...
+
+### Redux工作流
+> React是单向数据流, 只读不写, 数据的修改通过发指令的方式, 让store通过reducer修改
+- Reducer是处理数据的方法, 是函数, 不是一个对象
+- Reducer可以帮助store初始化数据, 修改数据, 删除数据
+- Actions是数据更新的指令
+- Store是数据仓库
+
+---
+## 利用store进行语言切换
+- 创建store, 创建reducer传入store进行初始化
