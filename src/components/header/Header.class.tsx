@@ -30,6 +30,7 @@ class HeaderComponent extends React.Component<RouteComponentProps & WithTranslat
     })
   }
   menuClickHandler = (e: MenuInfo) => {
+    console.log(e);
     if (e.key === 'new') {
       store.dispatch({ type: 'add_language', payload: { name: '新语言', code: 'new_code' } })
     } else {

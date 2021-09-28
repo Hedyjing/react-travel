@@ -100,3 +100,4 @@ react-router和react-router-dom
 
 ## 使用i18n框架完成语言国际化
 - 分别使用HOC和Hooks的方案来使用i18n
+- 语言的切换应该在reducer中进行, 使用i18n的API
