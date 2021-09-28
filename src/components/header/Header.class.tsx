@@ -1,13 +1,16 @@
 import React from "react";
 import styles from "./Header.module.css";
 import logo from '../../assets/logo.svg'
-import { Layout, Typography, Input, Menu, Button, Dropdown } from 'antd';
+import { Layout, Typography, Input, Menu, Button, Dropdown, } from 'antd';
 import { GlobalOutlined } from '@ant-design/icons';
 import { RouteComponentProps, withRouter } from "react-router-dom";
 import store from "../../redux/store";
 import { LanguageState } from "../../redux/languageReducer";
 
 interface State extends LanguageState {}
+interface MenuInfo {
+  key: string;
+}
 
 class HeaderComponent extends React.Component<RouteComponentProps, State> {
   constructor(props: any) {
@@ -17,6 +20,10 @@ class HeaderComponent extends React.Component<RouteComponentProps, State> {
       language: storeState.language,
       languageList: storeState.languageList
     }
+  }
+  menuClickHandler = (e: MenuInfo) => {
+    const action = 'change_language';
+    store.dispatch({type: action, payload: e.key});
   }
   render() {
     const {history} = this.props;
@@ -29,7 +36,7 @@ class HeaderComponent extends React.Component<RouteComponentProps, State> {
             <Dropdown.Button
               style={{ marginLeft: 15 }}
               overlay={
-                <Menu>
+                <Menu onClick={this.menuClickHandler}>
                   {this.state.languageList.map(l => {
                     return <Menu.Item key={l.code}>{l.name}</Menu.Item>
                   })}

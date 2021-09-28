@@ -89,3 +89,6 @@ react-router和react-router-dom
 
 ## 在组件中使用store访问数据渲染到页面上
 - 使用store.getState();
+
+## 使用action来dispatch命令和变化
+- dispatch参数为`{type: 'todos/todoAdded', payload: todoText}`

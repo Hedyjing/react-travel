@@ -15,5 +15,9 @@ const defaultState: LanguageState = {
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = defaultState, action: any) => {
+  if (action?.type === 'change_language') {
+    const newState = {...state, language: action.payload}
+    return newState;
+  }
   return state;
 }
