@@ -97,3 +97,6 @@ react-router和react-router-dom
 - 在组件内订阅store的数据, 以便store数据更新后可以及时推送到组件
 - 当store变化时, 会调用subscribe参数中的回调函数来更新组件的state
 - subscribe的参数是一个回调函数, 用来更新组件的state
+
+## 使用i18n框架完成语言国际化
+- 分别使用HOC和Hooks的方案来使用i18n
