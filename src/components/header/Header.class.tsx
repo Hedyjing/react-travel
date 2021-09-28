@@ -7,7 +7,7 @@ import { RouteComponentProps, withRouter } from "react-router-dom";
 import store from "../../redux/store";
 import { LanguageState } from "../../redux/languageReducer";
 
-interface State extends LanguageState {}
+interface State extends LanguageState { }
 interface MenuInfo {
   key: string;
 }
@@ -23,16 +23,21 @@ class HeaderComponent extends React.Component<RouteComponentProps, State> {
     store.subscribe(() => {
       const storeState = store.getState();
       this.setState({
-        language: storeState.language
+        language: storeState.language,
+        languageList: storeState.languageList
       })
     })
   }
   menuClickHandler = (e: MenuInfo) => {
-    const action = 'change_language';
-    store.dispatch({type: action, payload: e.key});
+    if (e.key === 'new') {
+      store.dispatch({ type: 'add_language', payload: { name: '新语言', code: 'new_code' } })
+    } else {
+      const action = 'change_language';
+      store.dispatch({ type: action, payload: e.key });
+    }
   }
   render() {
-    const {history} = this.props;
+    const { history } = this.props;
     return (
       <div className={styles['app-header']}>
         {/* 第一层导航, top-header */}
@@ -46,11 +51,12 @@ class HeaderComponent extends React.Component<RouteComponentProps, State> {
                   {this.state.languageList.map(l => {
                     return <Menu.Item key={l.code}>{l.name}</Menu.Item>
                   })}
+                  <Menu.Item key='new'>添加新语言</Menu.Item>
                 </Menu>
               }
               icon={<GlobalOutlined />}
             >
-              {this.state.language === 'en'? 'English' : '中文'}
+              {this.state.language === 'en' ? 'English' : '中文'}
             </Dropdown.Button>
             <Button.Group className={styles['button-group']}>
               <Button onClick={() => history.push('register')}>注册</Button>
